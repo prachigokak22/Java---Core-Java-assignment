@@ -1,0 +1,29 @@
+
+
+class Student{
+    int id;
+    String name;
+
+    public Student(int id,String name) {
+        this.id= id;
+        this.name=name;
+    }   
+
+    void display(){
+        System.err.println("id: "+id+" "+"name:"+name);
+    }
+    
+    
+}
+
+public class Constructor{
+    public static  void main(String [] args){
+
+        Student s1 = new Student(1, "Prachi");
+        Student s2 = new Student(2, "Aman");
+
+        s1.display();
+        s2.display();
+
+    }
+}
