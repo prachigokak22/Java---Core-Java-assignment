@@ -1,0 +1,1047 @@
+1. Introduction to Java 
+ 1. History of Java
+
+  Java was developed by James Gosling and his team at Sun Microsystems in 1991 and officially released in 1995. Initially, it was named Oak, but later renamed to Java. The main goal of Java was to create a platform-independent programming language. In 2010, Sun Microsystems was acquired by Oracle Corporation, which now maintains Java.
+
+     🔹 2. Features of Java
+
+      Java is known for several important features:
+
+      * Platform Independent: Java programs are compiled into bytecode, which can run on any system that has a Java Virtual Machine (JVM). This concept is known as Write Once, Run Anywhere (WORA).
+      *Object-Oriented: Java follows object-oriented principles such as encapsulation, inheritance, polymorphism, and abstraction. Everything in Java is based on classes and objects.
+        *Simple: Java is easy to learn and use because it removes complex features like pointers and operator overloading.
+      *Secure: Java provides a secure environment by avoiding direct memory access and using bytecode verification.
+        *Robust: Java has strong memory management and exception handling, which makes programs reliable.
+      *Multithreaded: Java supports multiple threads, allowing programs to perform multiple tasks simultaneously.
+      *High Performance: Java uses a Just-In-Time (JIT) compiler to improve execution speed.
+   🔹 3. JVM, JRE, and JDK
+      *JVM (Java Virtual Machine):
+      *JVM is responsible for executing Java bytecode. It converts bytecode into machine-level instructions and enables platform independence.
+      *JRE (Java Runtime Environment):
+      *JRE provides the environment required to run Java programs. It includes the JVM and standard class libraries.
+      *JDK (Java Development Kit):
+      *JDK is used for developing Java applications. It includes JRE along with development tools such as compiler (javac), debugger, and other utilities.
+   🔹 4. Setting up Java Environment and IDETo start Java development:
+
+      *Install the JDK from the official Oracle website
+      *Set environment variables such as JAVA_HOME and PATH
+      *Use an IDE like Eclipse IDE or IntelliJ IDEA for writing, compiling, and debugging code
+
+    An IDE provides features like code suggestions, error detection, and debugging tools, making development easier and faster.
+
+   🔹 5. Java Program Structure
+
+      *A basic Java program consists of the following components: 
+      -package mypackage;
+
+import java.util.*;
+
+class Demo {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+    }
+}
+    - Package: Used to organize classes into namespaces
+    - Import: Allows access to predefined classes and libraries
+    - Class: The basic building block of a Java program
+    - Method: A block of code that performs a specific task
+    - main() Method: The entry point of a Java program
+
+    - The main method is defined as:
+
+    - public: accessible from anywhere
+    - static: can be executed without creating an object
+    - void: does not return any value
+    - String[] args: used for command-line arguments
+
+2. Data Types, Variables, and Operators
+
+ 🔹 1. Primitive Data Types in Java 
+    Java provides 8 primitive data types to store basic values:
+      Data Type	   Size	      Description  	     Example
+        byte 	     1 byte	    Small integer	     byte b = 10;
+        short	     2 bytes	  Small integer	     short s = 100;
+        int	       4 bytes	  Integer numbers	   int i = 500;
+        long	     8 bytes	  Large integer	     long l = 10000L;
+        float	     4 bytes	  Decimal numbers	   float f = 3.14f;
+        double	   8 bytes	  Double precision   decimal	double d = 3.14159;
+        char	     2 bytes	  Single Unicode     character	char c = 'A';
+        boolean	   1 bit	    True/False value	  boolean flag = true;
+
+  🔹 2. Variable Declaration and Initialization
+      - Declaration: Telling the compiler about the variable type and name
+        eg,int age;
+      - Initialization: Assigning a value to the variable
+        age = 25;
+      -  Combined Declaration and Initialization
+          int age = 25;
+          float price = 99.99f;
+          char grade = 'A';
+          boolean isActive = true;
+      -Rules for Variable Names:
+      -Must start with a letter, $ or _
+      -Cannot start with a number
+      -No spaces or reserved keywords
+
+
+  🔹 3. Operators in Java
+
+     1. Arithmetic Operators
+          Operator	                          Description
+     ------------------------------------------------------------     
+            +	                                Addition
+            -	                                Subtraction
+            *	                                Multiplication
+            /	                                Division
+            %	                                Modulus (remainder)
+            ++	                              Increment
+            --	                              Decrement
+    2. Relational Operators
+        Operator	                            Description
+    ------------------------------------------------------------    
+          ==                                  	Equal to
+          !=                                  	Not equal to
+          >	                                    Greater than
+          <	                                    Less than
+          >=                                  	Greater than or equal
+          <=                                  	Less than or equal
+    3. Logical Operators
+        Operator	                            Description
+    ------------------------------------------------------------  
+          &&                                   Logical AND
+          `	                                   
+          !	                                   Logical NOT
+    4. Assignment Operators
+        Operator	                            Description
+    ------------------------------------------------------------  
+          =                                    Assign value
+          +=	                                 Add and assign
+          -=	                                 Subtract and assign
+          *=	                                 Multiply and assign
+          /=	                                 Divide and assign
+          %=	                                 Modulus and assign
+     5. Unary Operators
+            Operator	                            Description
+    ------------------------------------------------------------  
+        + →                                         Positive sign
+        - →                                         Negative sign
+        ++ →                                        Increment
+        -- →                                        Decrement
+        ! →                                         Logical NOT
+    6. Bitwise Operators
+            Operator	                            Description
+    ------------------------------------------------------------  
+            &	                                        AND
+            `	`                                     
+            ^	                                        XOR
+            ~	                                        Complement
+            <<	                                      Left shift
+            >>	                                      Right shift
+            >>>	                                      Zero-fill right shift
+
+  🔹 4. Type Conversion and Type Casting
+      Type Conversion (Implicit / Widening): Smaller data type → Larger data type automatically
+      int i = 100;
+      double d = i;  // int → double
+    -Type Casting (Explicit / Narrowing): Larger data type → Smaller data type manually
+      double d = 99.99;
+      int i = (int) d;  // double → int (fraction lost)
+    - Rules:
+    - Widening is safe → no data loss
+    - Narrowing may lose data → explicit cast needed
+
+3. Control Flow Statements 
+   - Control flow statements determine the order in which statements are executed in a Java program.
+  🔹 1. If-Else Statements
+
+      -Used for decision making based on conditions.
+      -
+      -if executes a block if the condition is true
+      -else executes when the condition is false
+      -else if is used for multiple conditions 
+       eg . if (age >= 18) {
+          System.out.println("Eligible");
+          } else {
+              System.out.println("Not Eligible");
+          }
+
+  🔹 2. Switch Case Statement
+
+      - Used to select one option from multiple choices based on a value.
+      - 
+      - Works with int, char, String, etc.
+      - break is used to stop execution of other cases
+      eg. int day = 2;
+          switch(day) {
+              case 1: System.out.println("Monday"); break;
+              case 2: System.out.println("Tuesday"); break;
+              default: System.out.println("Invalid");
+          }
+
+  🔹 3. Loops (Iteration Statements)
+
+     - Used to execute a block of code multiple times.
+      
+     🔸 For Loop
+      
+      -Used when the number of iterations is known.
+      
+      for(int i = 1; i <= 5; i++) {
+          System.out.println(i);
+      }
+     🔸 While Loop
+      
+      -Executes while the condition is true.
+      
+      int i = 1;
+      while(i <= 5) {
+          System.out.println(i);
+          i++;
+      }
+     🔸 Do-While Loop
+      
+      -Executes at least once, then checks the condition.
+      
+      int i = 1;
+      do {
+          System.out.println(i);
+          i++;
+      } while(i <= 5);
+
+  🔹 4. Break and Continue
+     🔸 break
+      -Terminates loop or switch immediately
+      for(int i = 1; i <= 5; i++) {
+          if(i == 3) break;
+          System.out.println(i);
+      }
+     🔸 continue
+      -Skips current iteration and moves to next
+      for(int i = 1; i <= 5; i++) {
+          if(i == 3) continue;
+          System.out.println(i);
+      }
+4. Classes and Objects
+
+  - Classes and objects are the core of object-oriented programming in Java. A class is a blueprint, and objects are instances of that class.
+  🔹 1. Defining a Class and Object in Java
+      Class: A user-defined data type that contains variables (data members) and methods (functions)
+      Object: An instance of a class used to access its properties and behaviors
+      eg.class Student {
+            int id;
+            String name;
+
+            void display() {
+                System.out.println(id + " " + name);
+            }
+        }
+
+    🔹 2. Constructors and Overloading
+    - Constructor: A special method used to initialize objects
+    - Same name as class
+    - No return type
+    eg. class Student {
+             int id;
+             String name;
+         
+             Student(int i, String n) {
+                 id = i;
+                 name = n;
+             }
+         }
+    -   Constructor Overloading: Multiple constructors with different parameters
+         Student() {
+             id = 0;
+             name = "Default";
+         }
+         
+         Student(int i) {
+             id = i;
+         }
+    🔹 3. Object Creation and Accessing Members
+    - Object is created using new keyword
+    - Student s1 = new Student(1, "Prachi");
+    - Access members using dot (.) operator
+    - System.out.println(s1.name);
+    - s1.display();
+    🔹 4. this Keyword
+    - Refers to the current object
+    - Used to differentiate instance variables from parameters
+        eg. class Student {
+             int id;
+         
+             Student(int id) {
+                 this.id = id; // current object variable
+             }
+         }
+    - Other uses:
+    - Call current class constructor → this()
+    - Pass current object as argument
+
+5. Methods in Java
+
+    - Methods are blocks of code that perform a specific task and help in code reusability and modular programming.
+  🔹 1. Defining Methods
+      - A method is defined inside a class and contains:
+        Access modifier
+        Return type
+        Method name
+        Parameters (optional)
+        Method body
+      class Demo {
+          void show() {
+              System.out.println("Hello Java");
+          }
+      }
+  🔹 2. Method Parameters and Return Types
+      -Parameters: Inputs passed to a method
+      -Return Type: Value returned by the method
+      eg , int add(int a, int b) {
+            return a + b;
+            }
+      -If no value is returned → use void
+      eg ,void printMessage(String msg) {
+              System.out.println(msg);
+          }
+  🔹 3. Method Overloading
+       -Same method name with different parameters
+       -eg, add(int a, int b) {
+          return a + b;
+      }
+
+      double add(double a, double b) {
+          return a + b;
+      }
+      Return type alone cannot differentiate overloaded methods
+  🔹 4. Static Methods and Variables
+     🔸 Static Variable
+      -Shared among all objects
+      -Created only once
+      eg , class Demo {
+                static int count = 0;
+            }
+     🔸 Static Method
+        -Belongs to class, not object
+        -Can be called without creating object
+      eg, class Demo {
+              static void show() {
+                  System.out.println("Static method");
+              }
+          }
+
+      * Call:  Demo.show();
+     🔸 Key Points
+        -Static methods cannot access non-static members directly
+        -Static variables are common for all objects
+6. Object-Oriented Programming (OOPs) Concepts
+   - OOP is a programming approach based on objects and classes, used to design modular, reusable, and maintainable software.
+
+  🔹 1. Basics of OOP
+     🔸 Encapsulation
+      - Wrapping data (variables) and code (methods) into a single unit (class)
+      - Data is hidden using access modifiers (private, public, etc.)
+      eg, class Account {
+              private double balance;
+
+              public void setBalance(double b) {
+                  balance = b;
+              }
+
+              public double getBalance() {
+                  return balance;
+              }
+          }
+     🔸 Inheritance
+        - One class acquires properties and methods of another class
+        - Promotes code reuse
+        - Uses extends keyword
+        - class Animal {
+              void eat() {
+                  System.out.println("Eating");
+              }
+          }
+
+        class Dog extends Animal {
+            void bark() {
+                System.out.println("Barking");
+            }
+        }
+     🔸 Polymorphism
+       - Ability to take many forms
+       - Two types:
+       - Compile-time (Method Overloading)
+       - Runtime (Method Overriding)
+     🔸 Abstraction
+       - Hiding implementation details and showing only functionality
+       - Achieved using abstract classes and interfaces
+       eg - abstract class Shape {
+                abstract void draw();
+            }
+
+  🔹 2. Types of Inheritance
+     🔸 Single Inheritance -One parent → one child
+          class A {}
+          class B extends A {}
+     🔸 Multilevel Inheritance - Chain of inheritance
+          class A {}
+          class B extends A {}
+          class C extends B {}
+     🔸 Hierarchical Inheritance - 
+          
+          class A {}
+          class B extends A {}
+          class C extends A {}
+  🔹 3. Method Overriding and Dynamic Method Dispatch
+     🔸 Method Overriding - Subclass provides its own implementation of a parent class method
+        Same method name, same parameters
+          class Animal {
+              void sound() {
+                  System.out.println("Animal sound");
+              }
+          }
+
+          class Dog extends Animal {
+              void sound() {
+                  System.out.println("Dog barks");
+              }
+          }
+     🔸 Dynamic Method Dispatch - Method call is resolved at runtime
+          Parent class reference refers to child object
+          Animal a = new Dog();
+          a.sound();   // Calls Dog's method
+
+7. Constructors and Destructors (Java)
+
+    - Constructors are used to initialize objects, while Java does not have explicit destructors; instead, it uses Garbage Collection for memory management.
+    - 
+  🔹 1. Constructor Types
+     🔸 Default Constructor
+        - Provided by the compiler if no constructor is defined
+        - Initializes variables with default values
+        class Demo {
+            int x;
+        
+            Demo() {
+                x = 10;
+            }
+        }
+     🔸 Parameterized Constructor
+        - Accepts parameters to initialize object values
+        class Demo {
+            int x;
+        
+            Demo(int x) {
+                this.x = x;
+            }
+        }
+🔹 2. Copy Constructor (Emulated in Java)
+        - Java does not have a built-in copy constructor like C++
+        - It is created manually by passing an object as a parameter
+        class Demo {
+            int x;
+        
+            Demo(int x) {
+                this.x = x;
+            }
+        
+            Demo(Demo obj) {
+                this.x = obj.x;
+            }
+        }
+🔹 3. Constructor Overloading
+        - Multiple constructors in the same class with different parameters
+    - class Demo {
+    -     int x;
+    - 
+    -     Demo() {
+    -         x = 0;
+    -     }
+    - 
+    -     Demo(int x) {
+    -         this.x = x;
+    -     }
+    - }
+        - Helps in initializing objects in different ways
+  🔹 4. Object Life Cycle and Garbage Collection
+     🔸 Object Life Cycle
+        - Creation → Object is created using new keyword
+        - Usage → Object is used by calling methods
+        - Destruction → Object becomes unreachable
+     🔸 Garbage Collection
+        - Automatic process in Java to free memory
+        - Removes objects that are no longer in use
+        - Demo d = new Demo(10);
+        - d = null; // object eligible for garbage collection
+        - JVM automatically calls the garbage collector
+        - No need for manual memory deallocation
+
+8. Arrays and Strings
+
+      - Arrays and Strings are fundamental concepts in Java used to store and manipulate data efficiently.
+      - 
+  🔹 1. One-Dimensional and Multidimensional Arrays
+      🔸 One-Dimensional Array
+          - Stores elements of the same type in a single row
+          - int arr[] = {1, 2, 3, 4, 5};
+          - Access using index (starts from 0)
+          - System.out.println(arr[0]); // 1
+      🔸 Multidimensional Array
+          - Array of arrays (commonly 2D like rows and columns)
+          - int matrix[][] = {
+          -     {1, 2},
+          -     {3, 4}
+          - };
+          - Access elements using row and column
+          - System.out.println(matrix[1][1]); // 4
+  🔹 2. String Handling in Java
+      🔸 String Class
+          - Strings are immutable (cannot be changed after creation)
+          - String s = "Java";
+          - s.concat(" Programming"); // creates new object
+      🔸 StringBuffer
+          - Mutable (can be changed)
+          - Thread-safe (synchronized)
+          - StringBuffer sb = new StringBuffer("Hello");
+          - sb.append(" World");
+      🔸 StringBuilder
+          - Mutable but not thread-safe
+          - Faster than StringBuffer
+          - StringBuilder sb = new StringBuilder("Hello");
+          - sb.append(" Java");
+  🔹 3. Array of Objects
+          - Array can store objects instead of primitive values
+            class Student {
+                int id;
+                String name;
+            }
+            
+            Student[] s = new Student[2];
+            s[0] = new Student();
+            s[0].id = 1;
+            s[0].name = "Prachi";
+  🔹 4. String Methods
+       
+      - Commonly used methods of String class:
+      - Method	Description
+         length()	Returns length of string
+         charAt(index)	Returns character at index
+         substring(start, end)	Extracts part of string
+         toUpperCase()	Converts to uppercase
+         toLowerCase()	Converts to lowercase
+         equals()	Compares content
+         trim()	Removes spaces
+         replace()	Replaces characters
+        String str = "Java";
+          
+          System.out.println(str.length());      // 4
+          System.out.println(str.charAt(1));     // a
+          System.out.println(str.substring(1,3)); // av
+
+9. Inheritance and Polymorphism
+      - Inheritance and Polymorphism are key concepts of OOP that help in code reuse and flexibility.
+
+  🔹 1. Inheritance Types and Benefits
+      🔸 Inheritance
+        - Mechanism where one class acquires properties and methods of another class
+        - Uses extends keyword
+      🔸 Types of Inheritance
+        - Single Inheritance: One parent → one child
+        - Multilevel Inheritance: Chain of classes (A → B → C)
+        - Hierarchical Inheritance: One parent → multiple children
+      🔸 Benefits of Inheritance
+        - Code reusability
+        - Reduces redundancy
+        - Improves maintainability
+        - Supports method overriding (runtime polymorphism)
+  🔹 2. Method Overriding
+      - Subclass provides its own implementation of a parent class method
+      - Same method name and parameters
+        class Animal {
+            void sound() {
+                System.out.println("Animal sound");
+            }
+        }
+
+        class Dog extends Animal {
+            void sound() {
+                System.out.println("Dog barks");
+            }
+        }
+  🔹 3. Dynamic Binding (Run-Time Polymorphism)
+       - Method call is resolved at runtime, not compile time
+       - Achieved using method overriding
+       - Animal a = new Dog();
+       - a.sound();  // Calls Dog's method at runtime
+       - JVM decides which method to call based on object type
+  🔹 4. super Keyword and Method Hiding
+      🔸 super Keyword
+       - Refers to the immediate parent class object
+
+      Uses: 
+      - Call parent class constructor → super()
+      - Access parent class method → super.method()
+      - Access parent class variable → super.variable
+          class Animal {
+              void show() {
+                  System.out.println("Parent class");
+              }
+          }
+
+          class Dog extends Animal {
+              void show() {
+                  super.show();
+                  System.out.println("Child class");
+              }
+          }
+      🔸 Method Hiding
+       - Occurs when a subclass defines a static method with the same name as in parent class
+       - Unlike overriding, static methods are resolved at compile time
+          class Parent {
+              static void show() {
+                  System.out.println("Parent static");
+              }
+          }
+
+          class Child extends Parent {
+              static void show() {
+                  System.out.println("Child static");
+              }
+          }
+
+10. Interfaces and Abstract Classes
+      - Abstract classes and interfaces are used to achieve abstraction in Java, allowing only essential details to be exposed while hiding implementation.
+
+  🔹 1. Abstract Classes and Methods
+      - An abstract class is a class that cannot be instantiated
+      - It may contain:
+      - Abstract methods (without body)
+      - Concrete methods (with body)
+      - Declared using abstract keyword
+      abstract class Shape {
+          abstract void draw();  // abstract method
+
+          void display() {       // concrete method
+              System.out.println("Shape");
+          }
+      }
+      - A subclass must implement all abstract methods
+      class Circle extends Shape {
+          void draw() {
+              System.out.println("Drawing Circle");
+          }
+      }
+  🔹 2. Interfaces (Multiple Inheritance in Java)
+       - An interface is a collection of abstract methods
+       - By default:
+       - Methods are public abstract
+       - Variables are public static final
+      interface Printable {
+          void print();
+      }
+      - A class implements an interface using implements keyword
+      class Demo implements Printable {
+          public void print() {
+              System.out.println("Printing...");
+          }
+      }
+      🔸 Multiple Inheritance using Interface
+       - Java does not support multiple inheritance with classes
+       - But supports it through interfaces
+      interface A {
+          void show();
+      }
+
+      interface B {
+          void display();
+      }
+
+      class Demo implements A, B {
+          public void show() {
+              System.out.println("A method");
+          }
+
+          public void display() {
+              System.out.println("B method");
+          }
+      }
+  🔹 3. Implementing Multiple Interfaces
+       - A class can implement multiple interfaces at once
+      interface Printable {
+          void print();
+      }
+
+      interface Showable {
+          void show();
+      }
+
+      class Demo implements Printable, Showable {
+          public void print() {
+              System.out.println("Print method");
+          }
+
+          public void show() {
+              System.out.println("Show method");
+          }
+      }
+
+11. Packages and Access Modifiers
+
+      Packages and access modifiers in Java help in organizing code and controlling access (security and encapsulation).
+
+  🔹 1. Java Packages: Built-in and User-Defined Packages
+      🔸 Package
+      A package is a namespace that groups related classes and interfaces
+      🔸 Built-in Packages
+      Provided by Java by default
+
+      Examples:
+
+      java.lang → basic classes (String, Math, etc.)
+      java.util → utility classes (ArrayList, Scanner)
+      java.io → input/output classes
+      🔸 User-Defined Packages
+      Created by the programmer to organize code
+      package com.bank;
+      Helps in:
+      Avoiding name conflicts
+      Better code management
+      Reusability
+  🔹 2. Access Modifiers
+
+      Access modifiers define the visibility (access level) of classes, variables, and methods.
+
+      Modifier	  Same Class	  Same Package	  Different Package 
+   ---------------- ---------------------------------------------------------------------   
+        private	    yes	             No	              No
+        default	    yes	             yes	            No
+        protected	  yes	             yes	            yes (via inheritance)
+        public	    yes	             yes	            yes
+   -------------------------------------------------------------------------
+      🔸 Private
+          -Accessible only within the same class
+      🔸 Default (No Modifier)
+          -Accessible within the same package only
+      🔸 Protected
+          -Accessible within same package and in subclasses (even in different packages)
+      🔸 Public
+        - Accessible from anywhere 
+        
+  🔹 3. Importing Packages and Classpath
+      🔸 Import Statement
+        - Used to access classes from other packages
+          import java.util.Scanner;
+          Import all classes:
+          import java.util.*;
+      🔸 Classpath
+        - Classpath is the path where Java looks for compiled classes (.class files)
+        It can be set:
+          Temporarily (command line)
+          Permanently (environment variable)
+
+
+2. Exception Handling 
+     - Exception handling in Java is used to handle runtime errors so that the program can continue execution smoothly.
+
+  🔹 1. Types of Exceptions
+      🔸 Checked Exceptions
+        - Checked at compile time
+        - Must be handled using try-catch or declared with throws
+
+        * Examples:
+         IOException
+         SQLException
+      🔸 Unchecked Exceptions
+          - Occur at runtime
+          - Not mandatory to handle
+
+      Examples:
+       -NullPointerException
+       -ArithmeticException
+       -ArrayIndexOutOfBoundsException
+  🔹 2. try, catch, finally, throw, throws
+      🔸 try-catch
+        - try block contains code that may cause exception
+        - catch block handles the exception
+        try {
+            int a = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e);
+        }
+      🔸 finally
+          -Executes always, whether exception occurs or not
+          -Used for cleanup (closing files, resources)
+        finally {
+            System.out.println("Always executed");
+        }
+      🔸 throw
+        - Used to explicitly throw an exception
+         throw new ArithmeticException("Invalid operation");
+      🔸 throws
+        - Declares exceptions that a method may throw
+          void readFile() throws IOException {
+              // code
+          }
+  🔹 3. Custom Exception Classes
+        - User-defined exceptions created by extending Exception class
+        class MyException extends Exception {
+            MyException(String msg) {
+                super(msg);
+            }
+        }
+      if (age < 18) {
+          throw new MyException("Not eligible");
+      }
+
+
+13. Multithreading 
+     - Multithreading in Java allows a program to execute multiple threads (tasks) concurrently, improving performance and responsiveness.
+
+  🔹 1. Introduction to Threads
+      - A thread is a lightweight unit of execution within a program
+      - Multiple threads run independently but share the same memory
+      - Used in tasks like:
+      - Background processing
+      - Gaming
+      - Web servers
+  🔹 2. Creating Threads
+      🔸 By Extending Thread Class
+        - Create a class that extends Thread
+       Override the run() method
+       Call start() to begin execution
+       class MyThread extends Thread {
+           public void run() {
+               System.out.println("Thread is running");
+           }
+       }
+
+      MyThread t = new MyThread();
+      t.start();
+      🔸 By Implementing Runnable Interface
+      Create a class that implements Runnable
+      Override run() method
+      Pass object to Thread class
+      class MyRunnable implements Runnable {
+          public void run() {
+              System.out.println("Runnable thread");
+          }
+      }
+
+      Thread t = new Thread(new MyRunnable());
+      t.start();
+  🔹 3. Thread Life Cycle
+
+      A thread passes through different states:
+
+      New → Thread created
+      Runnable → Ready to run
+      Running → Executing
+      Blocked / Waiting → Waiting for resources
+      Terminated → Execution completed
+  🔹 4. Synchronization
+      Used to control access of multiple threads to shared resources
+      Prevents race conditions
+      synchronized void display() {
+          System.out.println("Synchronized method");
+      }
+      Only one thread can access synchronized code at a time
+  🔹 5. Inter-thread Communication
+      Allows threads to communicate with each other
+      Methods used:
+      wait() → pauses thread
+      notify() → wakes up one thread
+      notifyAll() → wakes all waiting threads
+      synchronized(obj) {
+          obj.wait();
+          obj.notify();
+      }
+
+14. File Handling (Java)
+   - File handling in Java is used to store, read, and manipulate data in files using classes from the java.io package.
+
+  🔹 1. Introduction to File I/O in Java (java.io package)
+        Java provides file handling through the java.io package
+        I/O means Input (reading) and Output (writing)
+        Files are used for permanent data storage
+
+        Common classes:
+
+        File → represents file or directory
+        FileReader, FileWriter → character-based I/O
+        BufferedReader, BufferedWriter → efficient I/O
+  🔹 2. FileReader and FileWriter Classes
+        🔸 FileReader
+        Used to read character data from files
+        FileReader fr = new FileReader("file.txt");
+        int ch;
+        while((ch = fr.read()) != -1) {
+            System.out.print((char) ch);
+        }
+        fr.close();
+        🔸 FileWriter
+        Used to write character data into files
+        FileWriter fw = new FileWriter("file.txt");
+        fw.write("Hello Java");
+        fw.close();
+  🔹 3. BufferedReader and BufferedWriter
+        🔸 BufferedReader
+        Reads data efficiently using buffering
+        Can read full lines
+        BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+        String line;
+        while((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();
+        🔸 BufferedWriter
+        Writes data efficiently
+        BufferedWriter bw = new BufferedWriter(new FileWriter("file.txt"));
+        bw.write("Hello World");
+        bw.newLine();
+        bw.close();
+  🔹 4. Serialization and Deserialization
+        🔸 Serialization
+        Converting an object into a byte stream
+        Used to save object state in a file
+        class Student implements Serializable {
+            int id;
+            String name;
+        }
+        🔸 Deserialization
+        Converting byte stream back into an object
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("file.txt"));
+        Student s = (Student) ois.readObject();
+        🔸 Key Points
+        Class must implement Serializable
+        Used in file storage, networking
+
+
+15. Collections Framework
+
+      The Collections Framework in Java provides a set of classes and interfaces to store and manipulate groups of objects dynamically.
+
+  🔹 1. Introduction to Collections Framework
+      Located in the java.util package
+      Used to store, retrieve, and manipulate data
+      Provides ready-made data structures
+      🔸 Advantages
+      Dynamic size (unlike arrays)
+      Built-in methods (sorting, searching)
+      Improves performance and reusability
+  🔹 2. Core Interfaces: List, Set, Map, Queue
+      🔸 List
+      Ordered collection
+      Allows duplicate elements
+
+      Examples: ArrayList, LinkedList
+
+      🔸 Set
+      Unordered collection
+      Does not allow duplicates
+
+      Examples: HashSet, TreeSet
+
+      🔸 Map
+      Stores data in key-value pairs
+      Keys must be unique
+
+      Examples: HashMap, TreeMap
+
+      🔸 Queue
+      Follows FIFO (First In First Out)
+      Used for processing tasks
+
+      Examples: PriorityQueue, LinkedList
+
+  🔹 3. Important Classes
+      🔸 ArrayList
+      Dynamic array
+      Fast access (index-based)
+      Allows duplicates
+      🔸 LinkedList
+      Uses nodes (linked structure)
+      Efficient insertion and deletion
+      🔸 HashSet
+      Stores unique elements
+      No order maintained
+      🔸 TreeSet
+      Stores unique elements in sorted order
+      🔸 HashMap
+      Stores key-value pairs
+      No order guaranteed
+      🔸 TreeMap
+      Stores key-value pairs in sorted order (by keys)
+  🔹 4. Iterators and ListIterators
+      🔸 Iterator
+      Used to traverse collection elements
+      Works with all collection types
+
+      Methods:
+
+      hasNext() → checks next element
+      next() → returns next element
+      Iterator<Integer> it = list.iterator();
+      while(it.hasNext()) {
+          System.out.println(it.next());
+      }
+      🔸 ListIterator
+      Used only with List
+      Can traverse in both directions
+
+      Methods:
+
+      hasPrevious()
+      previous()
+      ListIterator<Integer> li = list.listIterator();
+      while(li.hasNext()) {
+          System.out.println(li.next());
+      }
+
+16. Java Input/Output (I/O)
+       - Java I/O is used to read input and write output using streams. It supports handling data from files, memory, or other sources.
+
+  🔹 1. Streams in Java (InputStream, OutputStream)
+      A stream is a flow of data between a source and a destination
+      🔸 InputStream
+      Used to read data from a source (file, keyboard, etc.)
+      Works with byte data
+
+      Examples:
+
+      FileInputStream
+      BufferedInputStream
+      🔸 OutputStream
+      Used to write data to a destination
+      Works with byte data
+
+      Examples:
+
+      FileOutputStream
+      BufferedOutputStream
+  🔹 2. Reading and Writing Data Using Streams
+      🔸 Reading Data
+      FileInputStream fis = new FileInputStream("file.txt");
+      int data;
+      while((data = fis.read()) != -1) {
+          System.out.print((char)data);
+      }
+      fis.close();
+      🔸 Writing Data
+      FileOutputStream fos = new FileOutputStream("file.txt");
+      String msg = "Hello Java";
+      fos.write(msg.getBytes());
+      fos.close();
+      Byte streams are used for:
+      Binary data (images, audio, etc.)
+      Character streams (Reader, Writer) are used for text data
+  🔹 3. Handling File I/O Operations
+      File I/O includes:
+      Creating files
+      Reading data
+      Writing data
+      Closing resources
+      🔸 Using File Class
+      File file = new File("file.txt");
+
+      if(file.exists()) {
+          System.out.println("File exists");
+      }
